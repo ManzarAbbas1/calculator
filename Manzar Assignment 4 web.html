@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <title>Simple Calculator in Web </title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            background-color: #f0f0f0;
+        }
+
+        .calculator {
+            background-color: #fff;
+            border-radius: 7px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .display {
+            width: 100%;
+            background-color: #eee;
+            padding: 15px;
+            font-size: 15px;
+            text-align: right;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .button {
+            width: 25%;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .operator {
+            background-color:red  #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" class="display" readonly>
+        <div class="buttons">
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+			<button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+			<button class="button">0</button>
+            <button class="button clear">C</button>
+			<button class="button">.</button>
+			<button class="button operator">/</button>
+            <button class="button operator">*</button>
+            <button class="button operator">-</button>
+            <button class="button operator">=</button>
+        </div>
+    </div>
+  <script>
+    function addToDisplay(value) {
+      document.getElementById('display').value += value;
+    }
+
+    function clearDisplay() {
+      document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+      try {
+        let result = eval(document.getElementById('display').value);
+        document.getElementById('display').value = result;
+      } catch(error) {
+        document.getElementById('display').value = 'Error';
+      }
+    }
+  </script>
+  </body>
+</html>
